@@ -1,6 +1,5 @@
 ## gpu-Docker
-This docker is build to run the Keras based on GPU, Jupyter notebook, and root access to the shell via SSH.
-
+This docker builds an image that includes TensorFlow/Keras based on GPU, Jupyter notebook, and root access to the shell via SSH while Jupyter is running.
 ---
 
 Most machine learning researchers/ engineers/data scientists need to train the model with a different version of software/ libraries—this process ending with the installation lot of packages and solve the dependency, and spend more time.
