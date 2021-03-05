@@ -55,8 +55,8 @@ Then run this command to start the container:
 Wait for a couple of minutes to build the docker container from the Docker file. If everything went well, you shoul be login as root user in the container. 
 
 To start the Jupyter run this command: 
-```
-# ./root/runNotebook.sh
+```bash
+# jupyter notebook --port=7000 --ip=0.0.0.0 --no-browser --allow-root
 ```
 After starting the Jupyter you can access it from your browser: 
 ``` bash 
@@ -67,9 +67,8 @@ The default port for the Jupyter is 7000 and 20 for SSH login, and you could mod
 
 ***Note: be sure those ports are open if you are using Firewall in your local system.***
 
-You can log in by SSH in another terminal, so you don't need to stop the Jupyter installing or managing the software. 
+In case if you need to install software/ packages, you don't need to stop the Jupyter, open another terminal and connect to the container:
 
-open another terminal and connect to the container:
 ```
 # ssh root@YOUR-IP-Address -p 20
 ```

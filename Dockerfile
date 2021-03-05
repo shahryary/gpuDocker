@@ -112,6 +112,6 @@ EXPOSE 7000
 RUN echo "root:root"|chpasswd
 # restart ssh & bash to login as root user to the docker 
 ENTRYPOINT  service ssh restart &&  bash
-COPY runNotebook.sh /root/ 
-RUN chmod +x /root/runNotebook.sh
+# starting point
+WORKDIR /storage
 
