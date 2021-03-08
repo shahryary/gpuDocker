@@ -6,7 +6,7 @@ This docker builds an image that includes TensorFlow/Keras based on GPU, Jupyter
 
 Most machine learning researchers/ engineers/data scientists need to train the model with a different version of software/ libraries—this process ending with the installation lot of packages and solve the dependency, and spend more time.
 
-This docker runs Keras version 2.3 based on GPU that uses Nvidia-docker and has access to Jupyter notebook. Besides, you can connect by ssh to the same docker and use the Linux commands as a root user. 
+This docker runs Keras version 2.4 based on GPU that uses Nvidia-docker and has access to Jupyter notebook. Besides, you can connect by ssh to the same docker and use the Linux commands as a root user. 
 
 This is useful because you don't need to stop the Jupyter or use '!' from the notebook to install Linux software or python packages. 
 
@@ -15,13 +15,13 @@ Here is the list of some softwares included in the docker:
 ---
 
 | Software/ packages | version/ comments |
-|--------------------|-------------------|
+| ------------------ | ----------------- |
 | Ubuntu             | 18.04             |
 | Python             | 3.6               |
-| CUDA               | 10.0              |
-| CUDNN              | 7                 |
-| tensorflow-gpu     | 1.15              |
-| keras              | 2.3.1             |
+| CUDA               | 11.0              |
+| CUDNN              | 8                 |
+| tensorflow (gpu)   | 2.4.1             |
+| keras              | 2.4.3             |
 
 Final image size ~10GB 
 

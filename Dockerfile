@@ -1,6 +1,6 @@
-ARG cuda_version=10.0
-ARG cudnn_version=7
-FROM nvidia/cuda:${cuda_version}-cudnn${cudnn_version}-devel
+ARG cuda_version=11.0
+ARG cudnn_version=8   
+FROM nvidia/cuda:11.0-cudnn8-devel-ubuntu18.04
 
 # Install system packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -54,7 +54,7 @@ RUN conda install -y python=${python_version} && \
     pip install \
       sklearn_pandas \
       gffutils \
-      tensorflow-gpu==1.15 \
+      tensorflow==2.4.1 \
       idx2numpy \
       cntk-gpu --ignore-installed six  && \
     conda install \
@@ -77,12 +77,11 @@ RUN conda install -y python=${python_version} && \
       jupyterthemes \			
       && \
     #git clone git://github.com/keras-team/keras.git /src && pip install -e /src[tests] && \
-    pip install keras==2.3.1 && \
+    pip install keras==2.4.3 && \
     conda clean -yt
 
 RUN pip install seaborn
 ADD theanorc /home/keras/.theanorc
-
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
@@ -113,5 +112,8 @@ RUN echo "root:root"|chpasswd
 # restart ssh & bash to login as root user to the docker 
 ENTRYPOINT  service ssh restart &&  bash
 # starting point
+COPY runNotebook.sh /root/ 
+RUN chmod +x /root/runNotebook.sh
+
 WORKDIR /storage
 

@@ -6,8 +6,8 @@ DOCKER_FILE=Dockerfile
 DOCKER=GPU=$(GPU) nvidia-docker
 BACKEND=tensorflow
 PYTHON_VERSION?=3.6
-CUDA_VERSION?=10.0
-CUDNN_VERSION?=7
+CUDA_VERSION?=11.0
+CUDNN_VERSION?=8
 SRC?=$(pwd)
 
 build:
